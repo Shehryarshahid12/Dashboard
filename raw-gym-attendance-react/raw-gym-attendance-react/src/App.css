@@ -1,0 +1,327 @@
+.facio-main {
+  display: flex;
+  background-image: url(./images/background.png);
+  min-height: 100vh;
+  padding: 20px;
+}
+.facio {
+  text-align: center;
+  width: 80%;
+  border-radius: 10px;
+}
+.clock div {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px auto;
+  color: #fbd400 !important;
+}
+.barchat {
+  display: flex;
+  justify-content: center;
+}
+.recharts-surface{
+  background-color: #000;
+}
+.clock div span {
+  --border-size: 3px;
+  --border-angle: 0turn;
+
+  background-image: conic-gradient(
+      from var(--border-angle),
+      #000,
+      #000 50%,
+      #000
+    ),
+    conic-gradient(from var(--border-angle), transparent 20%, black, yellow);
+  background-size: calc(100% - (var(--border-size) * 2))
+      calc(100% - (var(--border-size) * 2)),
+    cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  animation: bg-spin 3s linear infinite;
+}
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+.UserData {
+  width: 55%;
+}
+.UserData table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 74%;
+  margin-top: 10px;
+  background-color: #171717;
+  color: white;
+  border-radius: 30px;
+  border: hidden;
+}
+
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 13px;
+}
+th {
+  font-size: 15px;
+  color: #fbd400;
+  font-weight: bolder;
+}
+
+/*tr:nth-child(even) {
+  background-color: yellow;
+}*/
+.facio h2 {
+  color: #fbd400;
+  font-size: 35px;
+  text-shadow: 2px 2px 3px #000;
+}
+.facio-logo {
+  margin-top: 20px;
+}
+.search-field input {
+  padding: 15px;
+  border: 2px solid #fbd500;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 55%;
+}
+.buttons-checkin {
+  margin-top: 15px;
+}
+
+.buttons-checkin button {
+  width: 32%;
+  height: 40px;
+  font-size: 20px;
+  padding: 10px;
+  background-color: #fbd500;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.buttons-checkout {
+  margin-top: 15px;
+}
+.buttons-checkout button {
+  width: 62%;
+  height: 65px;
+  font-size: 20px;
+  padding: 10px;
+  background-color: #fbd500;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.buttons-checkin:hover button {
+  color: #fbd500;
+  transition: 0.4s;
+}
+.buttons-checkout:hover button {
+  color: #fbd500;
+  transition: 0.4s;
+}
+::placeholder {
+  color: black;
+  font-size: 20px;
+}
+.number-data {
+  margin-top: 10px;
+  border: 1px solid yellow;
+  color: #fbd400;
+  width: 35%;
+  margin: 0 auto;
+  margin-top: 15px;
+  background-color: #000;
+}
+.number-data h3{
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+.UserData button{
+  background-color: rgb(255,255,0);
+  font-size: 14px;
+  padding: 6px 5px 6px 5px;
+}
+
+.toggle {
+  margin-top: 20px;
+}
+
+/* Login Page start */
+.login_main{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.login_input{
+  width: 100%;
+}
+.login_button{
+  margin: 20px;
+  text-align: center;
+}
+/* ------end----- */
+
+/* antd switch */
+.ant-switch-inner-unchecked,
+.ant-switch-inner-checked {
+  font-size: 24px !important;
+  line-height: 24px !important ;
+}
+.ant-switch {
+  height: 50px !important;
+}
+.ant-switch-handle {
+  width: 23px !important;
+  height: 45px !important;
+}
+.ant-switch-handle::before {
+  border-radius: 50% !important;
+}
+.ant-switch-inner {
+  padding-inline-start: 35px !important;
+}
+
+@media only screen and (max-width: 1326px) {
+  .facio {
+    width: 50%;
+  }
+  .buttons-checkin button {
+    width: 41%;
+  }
+  .number-data{
+    width: 60%;
+  }
+
+}
+@media only screen and (max-width: 1030px) {
+  .search-feild input {
+    width: 55%;
+  }
+  .number-data{
+    width: 80%;
+  }
+  .buttons-checkin button {
+    width: 56%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .facio {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .buttons-checkin button,
+  .buttons-checkout button {
+    font-size: 16px;
+  }
+  .UserData {
+    width: 100%;
+    margin: 20px 0;
+  }
+  .facio-main{
+    flex-direction: column;
+  }
+  .UserData table{
+    margin: auto;
+  }
+  .number-data{
+    width: 40%;
+  }
+  .toggle {
+    margin-top: 20px;
+  }
+  .UserData table {
+    width: 90%;
+  }
+  .number-data{
+    width: 60%;
+  }
+  /* .recharts-wrapper{
+    max-width: 300px;
+  } */
+  /* .facio {
+    width: 59%;
+    height: 1050px;
+  }
+  .number-data{
+    width: 39%;
+  }
+  .number-data {
+    padding: 9px;
+    width: 71%;
+  }
+
+
+  .buttons-checkin button,
+  .buttons-checkout button {
+    width: 66%;
+    font-size: 16px;
+    padding: 7px;
+  }
+  .search-feild input {
+    width: 55%;
+  }
+  .UserData table {
+    width: 95%;
+  }
+  .buttons-checkin button {
+    height: 40px;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #fbd500;
+    border-radius: 10px;
+    cursor: pointer;
+  } */
+}
+
+@media only screen and (max-width: 500px) {
+  .facio {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .buttons-checkin button,
+  .buttons-checkout button {
+    font-size: 16px;
+  }
+  .UserData {
+    width: 100%;
+    margin: 20px 0;
+  }
+  .facio-main{
+    flex-direction: column;
+  }
+  .UserData table{
+    margin: auto;
+  }
+  .number-data{
+    width: 40%;
+  }
+  .toggle {
+    margin-top: 20px;
+  }
+  .number-data{
+    width: 100%;
+  }
+  .barchat {
+    overflow: auto;
+  }
+  /* .recharts-wrapper{
+    max-width: 300px;
+  } */
+}
